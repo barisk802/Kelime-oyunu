@@ -32,7 +32,7 @@ if kategori_sec != st.session_state.kategori:
     else:
         st.session_state.kelime = random.choice(kelime_renk)
         kelimeler = kelime_renk
-else:
+    else:
     if st.session_state.kategori == "Meyve":
         kelimeler = kelime_meyve
     elif st.session_state.kategori == "Eşya":
@@ -69,4 +69,5 @@ if st.button("Tahmin Et") and tahmin:
 
         else:
             print("Yanlış Cevap! Tekrar Deneyiniz!")
+
 
