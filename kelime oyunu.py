@@ -32,12 +32,12 @@ if kategori_sec != st.session_state.kategori:
     else:
         st.session_state.kelime = random.choice(kelime_renk)
         kelimeler = kelime_renk
-    else:        
-        if st.session_state.kategori == "Meyve":
+else:
+    if st.session_state.kategori == "Meyve":
         kelimeler = kelime_meyve
-        elif st.session_state.kategori == "Eşya":
+    elif st.session_state.kategori == "Eşya":
         kelimeler = kelime_esya
-        else:
+    else:
         kelimeler = kelime_renk
 
 
@@ -47,12 +47,13 @@ st.write(f"Kelimenin uzunluğu: {len(st.session_state.kelime)} harf")
 
 tahmin = st.text_input("Tahmininizi giriniz:")
 
+
 if st.button("Tahmin Et") and tahmin:
     st.session_state.deneme += 1
     if tahmin.lower() == st.session_state.kelime:
         st.success(f"Tebrikler! {st.session_state.deneme} denemede doğru bildiniz 🎉")
         st.balloons()
-        # Yeni kelime seç
+        
         if st.session_state.kategori == "Meyve":
             st.session_state.kelime = random.choice(kelime_meyve)
             kelimeler = kelime_meyve
@@ -66,9 +67,3 @@ if st.button("Tahmin Et") and tahmin:
         st.experimental_rerun()
     else:
         st.warning("Yanlış Cevap! Tekrar Deneyiniz!")
-
-        else:
-            print("Yanlış Cevap! Tekrar Deneyiniz!")
-
-
-
