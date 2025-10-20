@@ -56,14 +56,11 @@ if st.button("Tahmin Et") and tahmin:
         
         if st.session_state.kategori == "Meyve":
             st.session_state.kelime = random.choice(kelime_meyve)
-            kelimeler = kelime_meyve
         elif st.session_state.kategori == "Eşya":
             st.session_state.kelime = random.choice(kelime_esya)
-            kelimeler = kelime_esya
         else:
             st.session_state.kelime = random.choice(kelime_renk)
-            kelimeler = kelime_renk
         st.session_state.deneme = 0
-        st.experimental_rerun()
+        st.success("Yeni kelime hazır! Tahmin etmeye devam edebilirsiniz.")
     else:
         st.warning("Yanlış Cevap! Tekrar Deneyiniz!")
